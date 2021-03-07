@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand">Job Seeker - Hi, </a>
+    </div>
+    
+<div class="collapse navbar-collapse" id="myNavbar">
+
+    <ul class="nav navbar-nav navbar-right">
+        <li><a routerLink="/jobs/new" routerLinkActive="active"><b>Post a Job</b></a></li>
+        <li><a routerLink="/posted-jobs" routerLinkActive="active"><b>Posted Jobs</b></a></li>
+        <li><a routerLink="/logout" routerLinkActive="active"><b><span class="text text-danger">Logout</span></b></a></li>
+      </ul>
+  </div>
+</div>
+</nav>
+  
+<div class="container">
+  <h2>"Great vision without great people is irrelevant."</h2><br>
+  <h4> - Start hiring by posting your job </h4>
+ 
+</div>
+
+
+    
+    <div class="container">
+
+      <form #PostjobForm="ngForm" (ngSubmit)="postJob(PostjobForm.value)" ngNativeValidate>
+        
+        <div *ngIf="postedFlag" style="text-align: center;font-weight: bold;"> 
+            <span class="text-success">{{jobSuccessMsg}}</span>
+        </div>
+
+        <div *ngIf="!postedFlag" style="text-align: center;font-weight: bold;">
+            <span class="text-danger">{{jobErrorMsg}}</span>
+            </div>
+
+      <label for="jobTitle"><b>Select you job Title </b></label>
+       <select name="jobTitle" class="form-control" [(ngModel)]="newJob.title" required>
+       <option value="" selected>--Select--</option>
+       <option value="Software Engineer">Software Engineer</option>
+       <option value="Project Manager">Project Manager</option>
+       <option value="Team Lead">Team Lead</option>
+       <option value="Software Developer">Software Developer</option>
+       <option value="Web Designer">Web Designer</option>
+       <option value="Business Executive">Business Executive</option>
+       <option value="Librarian">Librarian</option>
+       <option value="Medical Assistant">Medical Assistant</option>
+       <option value="Marketing Coordinator">Marketing Coordinator</option>
+       <option value="Dog Trainer">Dog Trainer</option>
+       </select>
+       <span class="text-danger"></span>
+
+      <label for="companyName"><b>Company Name</b></label>
+      <input type="text" placeholder="Company Name" name="companyName" class="form-control" [(ngModel)]="newJob.company" required>
+      <span class="text-danger"></span>
+
+      <label for="skills"><b>Description</b></label>
+      <input type="text" placeholder="Skills required (each separated by comma)" name="skills" class="form-control" [(ngModel)]="newJob.description" required>
+      <span class="text-danger"></span><br><br>
+
+      <div class="subbtn"><button type="submit">Post this Job</button></div><br><br>
+    </form>
+     
+    </div>
+    
+      <div class="footer">
+  Copyright @ JobSeeker
+</div>
+
+
+
+</body>
+</html>

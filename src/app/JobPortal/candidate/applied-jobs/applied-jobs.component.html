@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+ <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+
+
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+    
+          <a class="navbar-brand">Job Seeker - Hi,</a>
+        </div>
+        
+    <div class="collapse navbar-collapse" id="myNavbar">
+         <ul class="nav navbar-nav navbar-right">
+          <li><a routerLink="/jobs" routerLinkActive="active"><b>Available Jobs</b></a></li>
+          <li><a routerLink="/applied-jobs" routerLinkActive="active"><b>Applied Jobs</b></a></li>
+          <li><a routerLink="/logout" routerLinkActive="active"><b><span class="text text-danger">Logout</span></b></a></li>
+        </ul>
+      </div>
+    </div>
+    </nav>
+
+<div style="min-height: calc(100vh - 92px);"> 
+<div class="container">
+  <h2> Be Prepared !! You can get a call Anytime.</h2><br>
+  <h4>Jobs You have Applied -</h4>
+</div>
+
+<div *ngIf="httpErr" style="text-align:center;font-weight: bold;" class="text-danger">{{httpErrMsg}}</div>
+
+<div class="container">
+  <p></p>                                                                                      
+  <div class="table-responsive">          
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Job Title</th>
+        <th>Company Name</th>
+        <th>Desciption</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="!noJobsErr">
+
+        <tr *ngFor="let job of jobs"> 
+            <td>{{job.title}}</td>
+            <td>{{job.company}}</td>
+            <td>{{job.desciption}}</td>
+        </tr> 
+
+    </tbody>
+    <tbody *ngIf="noJobsErr">
+        <tr style="color:red;text-align: center;font-weight: bold;" >
+           <td colspan="3">
+            {{errMsg}}
+           </td> 
+        </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+</div>
+
+<div style="text-align: center;">
+    <ngb-pagination [collectionSize]="paginateObj.totalItem " [(page)]="paginateObj.page" (pageChange)="pageChange()" aria-label="Default pagination" ></ngb-pagination>
+</div>
+
+ <div class="footer">
+  Copyright @ JobSeeker
+</div>
+
+</body>
+</html>

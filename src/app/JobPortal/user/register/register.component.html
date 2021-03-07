@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" href="#">Job Seeker</a>
+    </div>
+    
+<div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+                <li><a routerLink="/register" routerLinkActive="active"> <span class="glyphicon glyphicon-user"></span> Sign Up </a></li>
+                <li><a routerLink='/login' routerLinkActive="active"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
+        </ul>
+  </div>
+</div>
+</nav>
+  
+<div class="container">
+   <h2>Job Seeker - Your Dreams. Our Mission </h2><br>
+
+  <h4>- SignUp as a Recruiter or as a Job Seeker, to start using our features </h4>
+ 
+</div>
+
+
+    
+    <div class="container">
+
+        <form #loginForm="ngForm" (ngSubmit)="register(loginForm.value)" ngNativeValidate>
+
+      <label for="Name"><b>First Name</b></label>
+      <input type="text" placeholder="Enter First Name" [(ngModel)]="userModel.first_name" name="first_name" class="form-control" required>
+
+      <label for="Name"><b>Last Name</b></label>
+      <input type="text" placeholder="Enter Last Name" [(ngModel)]="userModel.last_name" name="last_name" class="form-control" required>
+
+      <label for="Email"><b>Email</b></label>
+      <input type="email" placeholder="Enter Email" [(ngModel)]="userModel.email" name="email" class="form-control" required>
+      <div *ngIf="errmsgemail" class="text-danger" style="text-align: center;font-weight: bold;">{{message}}</div>
+      
+      <label for="Phone"><b>Phone number</b></label>
+      <input type="text" name="Phone" placeholder="Enter Phone Number" class="form-control"
+      pattern="[0-9]{10}" title="Phone numbers must be of 10 digits" [(ngModel)]="userModel.phone"  name="phone" required>
+       
+       <label for="UserType"><b>Account Type - Recruiters/Job Seekers</b></label>
+       <select name="UserType" [(ngModel)]="userModel.role_id"  name="role_id" class="form-control" required>
+       <option value="0" selected>--Select--</option>
+       <option value="2">Candidate</option>
+       <option value="3">Recruiter</option>
+       </select>
+       <div *ngIf="errmsgrole" class="text-danger" style="text-align: center;font-weight: bold;">Please Select Your Account Type</div>
+       
+       <label for="Passwor"><b>Password</b></label>
+      <input type="password" placeholder="Enter password for you account" name="Password" pattern=".{6,}" 
+      title="Password must have minimum 5 characters" [(ngModel)]="userModel.password" class="form-control" name="password" required>
+
+        
+      <div class="subbtn"><button type="submit" >Sign Up</button></div>
+      </form>
+     
+    </div>
+    
+
+    
+    <div class="footer">
+  Copyright @ JobSeeker
+</div>
+
+

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand">Job Seeker - Hi, </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="myNavbar">
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a routerLink="/jobs/new" routerLinkActive="active"><b>Post a Job</b></a></li>
+                    <li><a routerLink="/posted-jobs" routerLinkActive="active"><b>Posted Jobs</b></a></li>
+                    <li><a routerLink="/logout" routerLinkActive="active"><b><span
+                                    class="text text-danger">Logout</span></b></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div style="min-height: calc(100vh - 92px);">
+
+        <div class="container">
+            <h2>“Hire character. Train skill.” </h2><br>
+            <h4> - Jobs which you have posted </h4>
+
+        </div>
+
+        <div *ngIf="httpErr" style="text-align:center;font-weight: bold;" class="text-danger">{{httpErrMsg}}</div>
+
+        <div class="container">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Job Title</th>
+                            <th>Company Name</th>
+                            <th>Skills Required</th>
+                            <th>Details of applicants</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngIf="!nojobsErr">
+                        <tr *ngFor="let job of jobs| paginate: { id: 'foo', itemsPerPage: pageSize, currentPage: currentPg, totalItems: totalItemsCount }">
+                            <td>{{job.title}}</td>
+                            <td>{{job.company}}</td>
+                            <td>{{job.desciption}}</td>
+                            <td><span style="color:green;cursor: pointer;" (click)="applications(job.uuid)"
+                                    data-toggle="modal" data-target="#myModal"><b>View Applicants</b></span></td>
+                        </tr>
+                    </tbody>
+
+                    <tbody *ngIf="nojobsErr">
+                        <tr>
+                            <td colspan="5" style="text-align:center;" class="text-danger">Sorry! you have not posted
+                                any Jobs, start by clicking <b>Post a Job</b> option</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <div style="text-align: center;">
+            <ngb-pagination [collectionSize]="paginateObj.totalItem " [(page)]="paginateObj.page" (pageChange)="pageChange()" aria-label="Default pagination" ></ngb-pagination>
+</div>
+
+    <div class="container">
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Applicant Details</h4>
+                    </div>
+                    <div class="modal-body">
+                            <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Contact number</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody *ngIf="!noApplicantsFlag">
+                                            <tr *ngFor="let user of applicants">
+                                                <td>{{user.first_name}} {{user.last_name}}</td>
+                                                <td>{{user.phone}}</td>
+                                                <td>{{user.email}}</td>
+                                            </tr>
+                                        </tbody>
+                    
+                                        <tbody *ngIf="noApplicantsFlag">
+                                            <tr>
+                                                <td colspan="5" style="text-align:center;" class="text-danger">Sorry! There are currently<b> no Applicants</b> for this job </td>
+                                            </tr>
+                                        </tbody>
+                    
+                                    </table>
+                                </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Copyright @ JobSeeker
+    </div>
+
+
+</body>
+
+</html>

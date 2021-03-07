@@ -1,0 +1,5 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+.container {padding: 16px;}
+.notifyMsg{width:100%;text-align: center;}
+.footer {right: 0;bottom: 0;left: 0;padding: 1rem;background-color: #101010;text-align: center;color:white;}
+td span {cursor: pointer; color:red;}

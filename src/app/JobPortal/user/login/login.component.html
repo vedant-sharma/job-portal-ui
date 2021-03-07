@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="#">Job Seeker</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a routerLink="/register" routerLinkActive="active"> <span
+                                class="glyphicon glyphicon-user"></span> Sign Up </a></li>
+                    <li><a routerLink='/login' routerLinkActive="active"><span
+                                class="glyphicon glyphicon-log-in"></span> Login </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Job Seeker - Your Dreams. Our Mission </h2><br>
+        <h4>- A place where Candidates can directly Acknowledge the Recruiters </h4><br><br><br><br>
+
+    </div>
+
+
+    <div class="container">
+
+        <form #loginForm="ngForm" (ngSubmit)="Authenticate(Email.value,Password.value)" ngNativeValidate>
+            <label for="Email"><b>Email</b></label>
+            <input type="email" placeholder="Enter Email" #Email ngmodel name="Email" required>
+
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" #Password ngmodel name="Password" pattern=".{6,}"
+                title="Password must have minimum 6 characters" required>
+
+            <div *ngIf="errmsg" class="text-danger" style="text-align: center;font-weight: bold;">{{message}}</div>
+
+            <div class="subbtn"><button type="submit">Sign In</button></div>
+
+            <div style="text-align: center;"><a routerLink="/forgot-password" routerLinkActive="active"><span>Forgot Password</span></a></div>
+        </form>
+
+
+    </div>
+
+    <div class="footer">
+        Copyright @ JobSeeker
+    </div>
+
