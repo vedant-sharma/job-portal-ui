@@ -50,7 +50,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n\t<meta charset=\"utf-8\">\n\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n\t<title>404 HTML Tempalte by Colorlib</title>\n\n</head>\n\n<body>\n\n\t<div id=\"notfound\">\n\t\t<div class=\"notfound\">\n\t\t\t<div class=\"notfound-404\">\n\t\t\t\t<h1>Oops!</h1>\n\t\t\t</div>\n\t\t\t<h2>404 - Page not found</h2>\n\t\t\t<p>The page you are looking for might have been removed had its name changed or is temporarily unavailable.</p>\n\t\t\t<a routerLink=\"/jobs\" routerLinkActive=\"active\">Go To Homepage</a>\n\t\t</div>\n\t</div>\n\n</body>\n\n</html>\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n\t<meta charset=\"utf-8\">\n\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n\t<title>404 HTML Tempalte by Colorlib</title>\n\n</head>\n\n<body>\n\n\t<div id=\"notfound\">\n\t\t<div class=\"notfound\">\n\t\t\t<div class=\"notfound-404\">\n\t\t\t\t<h1>Oops!</h1>\n\t\t\t</div>\n\t\t\t<h2>404 - Page not found</h2>\n\t\t\t<p>The page you are looking for might have been removed had its name changed or is temporarily unavailable.</p>\n\t\t\t<a routerLink=\"/login\" routerLinkActive=\"active\">Go To Homepage</a>\n\t\t</div>\n\t</div>\n\n</body>\n\n</html>\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/JobPortal/recruiter/post-job/post-job.component.html": 
@@ -83,7 +83,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\n<html>\n\n<head>\n    <meta charset=\"UTF-8\">\n</head>\n\n<body>\n\n\n    <nav class=\"navbar navbar-inverse\">\n        <div class=\"container-fluid\">\n            <div class=\"navbar-header\">\n                <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n                    <span class=\"icon-bar\"></span>\n                    <span class=\"icon-bar\"></span>\n                    <span class=\"icon-bar\"></span>\n                </button>\n\n                <a class=\"navbar-brand\" href=\"#\">Job Seeker</a>\n            </div>\n\n            <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n                <ul class=\"nav navbar-nav navbar-right\">\n                    <li><a routerLink=\"/register\" routerLinkActive=\"active\"> <span\n                                class=\"glyphicon glyphicon-user\"></span> Sign Up </a></li>\n                    <li><a routerLink='/login' routerLinkActive=\"active\"><span\n                                class=\"glyphicon glyphicon-log-in\"></span> Login </a></li>\n                </ul>\n            </div>\n        </div>\n    </nav>\n\n    <div class=\"container\">\n        <h2>Job Seeker - Your Dreams. Our Mission </h2><br>\n        <h4>- A place where Candidates can directly Acknowledge the Recruiters </h4><br><br><br><br>\n\n    </div>\n\n\n    <div class=\"container\" *ngIf=\"verifyContainer\">\n\n        <form #loginForm=\"ngForm\" (ngSubmit)=\"Verify(Email.value)\" ngNativeValidate>\n            <label for=\"Email\"><b>Please Verify Your Email</b></label>\n            <input type=\"email\" placeholder=\"Enter Email\" #Email ngmodel name=\"Email\" required>\n            <div *ngIf=\"errMsg\" class=\"text-danger\" style=\"text-align: center;font-weight: bold;\">{{message}}</div>\n\n            <div class=\"subbtn\"><button type=\"submit\">Verify</button></div>\n\n        </form>\n    </div>\n\n    <div class=\"container\" *ngIf=\"resetContainer\">\n\n            <form #loginForm=\"ngForm\" (ngSubmit)=\"Reset(otp.value,Password.value)\" ngNativeValidate>\n\n                <div *ngIf=\"successMsgOtp\" class=\"text-success\" style=\"text-align: center;font-weight: bold;\">{{message}}</div>\n                <div *ngIf=\"errResetMsg\" class=\"text-danger\" style=\"text-align: center;font-weight: bold;\">{{invalidmsg}}</div>\n\n                <label for=\"otp\"><b>Enter OTP</b></label>\n                <input type=\"text\" placeholder=\"Enter OTP \" #otp ngmodel name=\"otp\" pattern=\"[0-9]{6}\" title=\"OTP must contain 6 digits\"required>\n\n                <label for=\"password\"><b>New Password</b></label>\n                <input type=\"password\" placeholder=\"Enter New Password\" #Password ngmodel name=\"Password\" pattern=\".{6,}\"\n                title=\"Password must have minimum 6 characters\" required>\n    \n                <div class=\"subbtn\"><button type=\"submit\">Submit</button></div>\n    \n            </form>\n        </div>\n\n    <div class=\"footer\">\n        Copyright @ JobSeeker\n    </div>\n\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\n<html>\n\n<head>\n    <meta charset=\"UTF-8\">\n</head>\n\n<body>\n\n\n    <nav class=\"navbar navbar-inverse\">\n        <div class=\"container-fluid\">\n            <div class=\"navbar-header\">\n                <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n                    <span class=\"icon-bar\"></span>\n                    <span class=\"icon-bar\"></span>\n                    <span class=\"icon-bar\"></span>\n                </button>\n\n                <a class=\"navbar-brand\" href=\"#\">Job Seeker</a>\n            </div>\n\n            <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n                <ul class=\"nav navbar-nav navbar-right\">\n                    <li><a routerLink=\"/register\" routerLinkActive=\"active\"> <span\n                                class=\"glyphicon glyphicon-user\"></span> Sign Up </a></li>\n                    <li><a routerLink='/login' routerLinkActive=\"active\"><span\n                                class=\"glyphicon glyphicon-log-in\"></span> Login </a></li>\n                </ul>\n            </div>\n        </div>\n    </nav>\n\n    <div class=\"container\">\n        <h2>Job Seeker - Your Dreams. Our Mission </h2><br>\n        <h4>- A place where Candidates can directly Acknowledge the Recruiters </h4><br><br><br><br>\n\n    </div>\n\n\n    <div class=\"container\" *ngIf=\"verifyContainer\">\n\n        <form #loginForm=\"ngForm\" (ngSubmit)=\"Verify(Email.value)\" ngNativeValidate>\n            <label for=\"Email\"><b>Please Verify Your Email</b></label>\n            <input type=\"email\" placeholder=\"Enter Email\" #Email ngmodel name=\"Email\" required>\n            <div *ngIf=\"errMsg\" class=\"text-danger\" style=\"text-align: center;font-weight: bold;\">{{message}}</div>\n\n            <div class=\"subbtn\"><button type=\"submit\">Verify</button></div>\n\n        </form>\n    </div>\n\n    <div class=\"container\" *ngIf=\"resetContainer\">\n\n            <form #loginForm=\"ngForm\" (ngSubmit)=\"Reset(otp.value,Password.value,ConfPassword.value)\" ngNativeValidate>\n\n                <div *ngIf=\"successMsgOtp\" class=\"text-success\" style=\"text-align: center;font-weight: bold;\">{{message}}</div>\n                <div *ngIf=\"errResetMsg\" class=\"text-danger\" style=\"text-align: center;font-weight: bold;\">{{invalidmsg}}</div>\n\n                <label for=\"otp\"><b>Enter OTP</b></label>\n                <input type=\"text\" placeholder=\"Enter OTP \" #otp ngmodel name=\"otp\" pattern=\"[0-9]{6}\" title=\"OTP must contain 6 digits\"required>\n\n                <label for=\"password\"><b>New Password</b></label>\n                <input type=\"password\" placeholder=\"Enter New Password\" #Password ngmodel name=\"Password\" pattern=\".{6,}\"\n                title=\"Password must have minimum 6 characters\" required>\n\n                <label for=\"ConfPassword\"><b>Confirm Password</b></label>\n                <input type=\"password\" placeholder=\"Confirm Password\" #ConfPassword ngmodel name=\"ConfPassword\" pattern=\".{6,}\"\n                title=\"Password must have minimum 6 characters\" required>\n    \n                <div class=\"subbtn\"><button type=\"submit\">Submit</button></div>\n    \n            </form>\n        </div>\n\n    <div class=\"footer\">\n        Copyright @ JobSeeker\n    </div>\n\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/JobPortal/user/login/login.component.html": 
@@ -857,19 +857,25 @@
                         _this.message = err.error.message;
                     });
                 };
-                ForgotPasswordComponent.prototype.Reset = function (otp, newPassword) {
+                ForgotPasswordComponent.prototype.Reset = function (otp, newPassword, ConfPassword) {
                     var _this = this;
                     this.reset.otp = otp;
                     this.reset.new_password = newPassword;
-                    this.userService.userResetPassword(this.reset).subscribe(function (data) {
-                        _this.errMsg = true;
-                        _this.message = data.data;
-                        _this.errResetMsg = false;
-                    }, function (err) {
-                        _this.errResetMsg = true;
-                        _this.successMsgOtp = false;
-                        _this.invalidmsg = err.error.message;
-                    });
+                    if (newPassword == ConfPassword) {
+                        this.userService.userResetPassword(this.reset).subscribe(function (data) {
+                            _this.errMsg = true;
+                            _this.message = data.data;
+                            _this.errResetMsg = false;
+                        }, function (err) {
+                            _this.errResetMsg = true;
+                            _this.successMsgOtp = false;
+                            _this.invalidmsg = err.error.message;
+                        });
+                    }
+                    else {
+                        this.invalidmsg = "Passwords didn't match, Try Again";
+                        this.errResetMsg = true;
+                    }
                 };
                 return ForgotPasswordComponent;
             }());
@@ -1192,7 +1198,7 @@
             /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
             /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-            /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
+            /* harmony import */ var _environments_environment_prod__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../environments/environment.prod */ "./src/environments/environment.prod.ts");
             var JobService = /** @class */ (function () {
                 function JobService(_http) {
                     this._http = _http;
@@ -1205,8 +1211,8 @@
                             'Authorization': "Bearer " + this.user.token
                         })
                     };
-                    console.log(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apirootUrl);
-                    return this._http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apirootUrl + 'jobs?page=' + page, this.httpOptions);
+                    console.log(_environments_environment_prod__WEBPACK_IMPORTED_MODULE_3__["environment"].apirootUrl);
+                    return this._http.get(_environments_environment_prod__WEBPACK_IMPORTED_MODULE_3__["environment"].apirootUrl + 'jobs?page=' + page, this.httpOptions);
                 };
                 JobService.prototype.apply = function (uuid) {
                     this.user = JSON.parse(localStorage.getItem("userData"));
@@ -1216,7 +1222,7 @@
                             'Authorization': "Bearer " + this.user.token
                         })
                     };
-                    return this._http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apirootUrl + 'jobs/' + uuid + '/apply', null, this.httpOptions);
+                    return this._http.post(_environments_environment_prod__WEBPACK_IMPORTED_MODULE_3__["environment"].apirootUrl + 'jobs/' + uuid + '/apply', null, this.httpOptions);
                 };
                 JobService.prototype.getAppliedJobs = function (page) {
                     this.user = JSON.parse(localStorage.getItem("userData"));
@@ -1226,7 +1232,7 @@
                             'Authorization': "Bearer " + this.user.token
                         })
                     };
-                    return this._http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apirootUrl + 'applied-jobs?page=' + page, this.httpOptions);
+                    return this._http.get(_environments_environment_prod__WEBPACK_IMPORTED_MODULE_3__["environment"].apirootUrl + 'applied-jobs?page=' + page, this.httpOptions);
                 };
                 JobService.prototype.postJob = function (newJob) {
                     this.user = JSON.parse(localStorage.getItem("userData"));
@@ -1236,7 +1242,7 @@
                             'Authorization': "Bearer " + this.user.token
                         })
                     };
-                    return this._http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apirootUrl + 'jobs/new', newJob, this.httpOptions);
+                    return this._http.post(_environments_environment_prod__WEBPACK_IMPORTED_MODULE_3__["environment"].apirootUrl + 'jobs/new', newJob, this.httpOptions);
                 };
                 JobService.prototype.getPostedJobs = function (page) {
                     this.user = JSON.parse(localStorage.getItem("userData"));
@@ -1246,7 +1252,7 @@
                             'Authorization': "Bearer " + this.user.token
                         })
                     };
-                    return this._http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apirootUrl + 'posted-jobs?page=' + page, this.httpOptions);
+                    return this._http.get(_environments_environment_prod__WEBPACK_IMPORTED_MODULE_3__["environment"].apirootUrl + 'posted-jobs?page=' + page, this.httpOptions);
                 };
                 JobService.prototype.getApplicants = function (uuid) {
                     this.user = JSON.parse(localStorage.getItem("userData"));
@@ -1256,7 +1262,7 @@
                             'Authorization': "Bearer " + this.user.token
                         })
                     };
-                    return this._http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apirootUrl + 'jobs/' + uuid + '/applicants', this.httpOptions);
+                    return this._http.get(_environments_environment_prod__WEBPACK_IMPORTED_MODULE_3__["environment"].apirootUrl + 'jobs/' + uuid + '/applicants', this.httpOptions);
                 };
                 return JobService;
             }());
@@ -1280,7 +1286,7 @@
             /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
             /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-            /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
+            /* harmony import */ var _environments_environment_prod__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../environments/environment.prod */ "./src/environments/environment.prod.ts");
             var UserService = /** @class */ (function () {
                 function UserService(_http) {
                     this._http = _http;
@@ -1291,16 +1297,16 @@
                     };
                 }
                 UserService.prototype.userRegistration = function (user) {
-                    return this._http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apirootUrl + 'register', user, this.httpOptions);
+                    return this._http.post(_environments_environment_prod__WEBPACK_IMPORTED_MODULE_3__["environment"].apirootUrl + 'register', user, this.httpOptions);
                 };
                 UserService.prototype.userAuthentication = function (auth) {
-                    return this._http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apirootUrl + 'login', auth, this.httpOptions);
+                    return this._http.post(_environments_environment_prod__WEBPACK_IMPORTED_MODULE_3__["environment"].apirootUrl + 'login', auth, this.httpOptions);
                 };
                 UserService.prototype.userVerifyEmail = function (verify) {
-                    return this._http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apirootUrl + 'forgot-password', verify, this.httpOptions);
+                    return this._http.post(_environments_environment_prod__WEBPACK_IMPORTED_MODULE_3__["environment"].apirootUrl + 'forgot-password', verify, this.httpOptions);
                 };
                 UserService.prototype.userResetPassword = function (reset) {
-                    return this._http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apirootUrl + 'reset-password', reset, this.httpOptions);
+                    return this._http.post(_environments_environment_prod__WEBPACK_IMPORTED_MODULE_3__["environment"].apirootUrl + 'reset-password', reset, this.httpOptions);
                 };
                 return UserService;
             }());
@@ -1463,6 +1469,22 @@
             ], AppModule);
             /***/ 
         }),
+        /***/ "./src/environments/environment.prod.ts": 
+        /*!**********************************************!*\
+          !*** ./src/environments/environment.prod.ts ***!
+          \**********************************************/
+        /*! exports provided: environment */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function () { return environment; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            var environment = {
+                production: true,
+                apirootUrl: ''
+            };
+            /***/ 
+        }),
         /***/ "./src/environments/environment.ts": 
         /*!*****************************************!*\
           !*** ./src/environments/environment.ts ***!
@@ -1516,7 +1538,7 @@
           \***************************/
         /*! no static exports found */
         /***/ (function (module, exports, __webpack_require__) {
-            module.exports = __webpack_require__(/*! /Users/vedantsharma/first-project-web/src/main.ts */ "./src/main.ts");
+            module.exports = __webpack_require__(/*! /Users/vedantsharma/SitesVed/jobportal-frontend/src/main.ts */ "./src/main.ts");
             /***/ 
         })
     }, [[0, "runtime", "vendor"]]]);

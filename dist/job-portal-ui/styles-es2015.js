@@ -338,7 +338,7 @@ if (content.locals) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/vedantsharma/first-project-web/src/styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! /Users/vedantsharma/SitesVed/jobportal-frontend/src/styles.css */"./src/styles.css");
 
 
 /***/ })
